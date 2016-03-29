@@ -1,9 +1,7 @@
 <?php
 
 /**
- *
  * @author: Christy
- *
  */
 
 $username = "guest"; // user must have privileges to create DB
