@@ -37,6 +37,6 @@ if ($goodToGo == 1) {
         print_r($_FILES);
     }
 }
-else echo "Whoops! There was a problem uploading your image.";
+else echo "Whoops! There was a problem uploading your image."; 
 
 ?>
