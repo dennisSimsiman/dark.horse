@@ -32,11 +32,45 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 if ($goodToGo == 1) {
     if (move_uploaded_file($_FILES['photo']['tmp_name'], "$uploadfile")) {
         echo "File uploaded!\n";
+
+        /* ADDING IMAGE INFO TO DATABASE */
+
+        $username = "guest"; // user must have privileges to create DB
+        $password = "guest";
+
+        $conn = mysqli_connect("localhost", $username, $password);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        echo "Connected successfully\n";
+
+        $conn->select_db('DarkHorse');
+
+
+        $title = $_FILES['photo']['name'];
+        $user_id = " ";
+        $caption = $_POST['caption'];
+
+        // Writes the information to the database
+        // Inserts current time into the upload_time field
+        // Inserts rating as null
+        $insert = "INSERT INTO Images VALUES ('$title', '$user_id', '$caption', date(\"Y-m-d H:i:s\"), null)";
+
+        if ($conn->query($insert) === TRUE) {
+            echo "Insert was successful :D\n";
+        } else {
+            echo "Error: " . $conn->error . "\n";
+        }
+
+        $conn->close();
     } else {
         echo "There was an error uploading your file :( Maybe this will help: \n";
         print_r($_FILES);
     }
 }
-else echo "Whoops! There was a problem uploading your image."; 
+
+else echo "Whoops! There was a problem uploading your image.";
 
 ?>
