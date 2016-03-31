@@ -22,7 +22,45 @@
 
         <h2>Recent Images</h2>
 
+        <?php
+
+            // select * from Images ORDER BY upload_time DESC LIMIT 3;
+
+            $recentimg1 = "";
+            $recentimg2 = "";
+            $recentimg3 = "";
+
+        ?>
+
         <div id="recent-images" class="wrapper-box">
+
+            <div class = "image">
+                <img src = "src/resources/<?php echo "$recentimg1"?>"><br/>
+                <span class="image-text">
+                    Caption: <br/>
+                    User: <br/>
+                    Rating: <br/>
+                    Date:
+                </span>
+            </div>
+            <div class = "image">
+                <img src = "src/resources/<?php echo "$recentimg2"?>"><br/>
+                <span class="image-text">
+                    Caption: <br/>
+                    User: <br/>
+                    Rating: <br/>
+                    Date:
+                </span>
+            </div>
+            <div class = "image">
+                <img src = "src/resources/<?php echo "$recentimg3"?>"><br/>
+                <span class="image-text">
+                    Caption: <br/>
+                    User: <br/>
+                    Rating: <br/>
+                    Date:
+                </span>
+            </div>
 
         </div>
 

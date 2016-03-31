@@ -12,6 +12,9 @@ div#header-links {
     float: right;
     font-size: medium;
 }
+div#recent-images{
+    text-align: center;
+}
 a {
     color: white;
     cursor: crosshair;
@@ -30,4 +33,15 @@ div.wrapper-box{
     border-radius: 25px;
     background: #2F4F4F;
     padding: 20px;
+}
+img {
+    height: 200px;
+}
+div.image {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+}
+.image-text {
+    display: block;
 }
